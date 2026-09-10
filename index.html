@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinit Shots — Boutique Aerial Photography &amp; Video, Johannesburg</title>
+<meta name="description" content="Infinit Shots is a boutique drone studio based in Johannesburg. Aerial photography and videography for property, events, land and anything better seen from above.">
+<meta name="theme-color" content="#0D121E">
+
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Infinit Shots — Boutique Aerial Photography &amp; Video">
+<meta property="og:description" content="Drone photography and videography based in Johannesburg. Property flyovers, events, land and cinematic aerials.">
+<meta property="og:locale" content="en_ZA">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;500;600;700;800;900&family=Manrope:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Infinit Shots",
+  "description": "Boutique aerial photography and videography studio using drones, based in Johannesburg.",
+  "telephone": "+27794635934",
+  "email": "tshepo@infinitshots.co.za",
+  "url": "https://infinitshots.co.za",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Johannesburg",
+    "postalCode": "2000",
+    "addressRegion": "Gauteng",
+    "addressCountry": "ZA"
+  },
+  "areaServed": "Johannesburg, Gauteng, South Africa"
+}
+</script>
+
+<style>
+/* =========================================================
+   INFINIT SHOTS — design tokens
+   Palette: deep night-flight navy, sky signal blue, dusk amber.
+   Type: Big Shoulders Display (condensed headline) + Manrope (body)
+         Caveat used once, as a signature accent — echoing the logo's script.
+   ========================================================= */
+:root{
+  --ink:        #0D121E;
+  --ink-soft:   #161C2C;
+  --ink-softer: #1E2740;
+  --cloud:      #EEF2F6;
+  --cloud-dim:  #DCE3EA;
+  --steel:      #8C97A6;
+  --signal:     #3EA6E0;
+  --signal-soft:#7FC6ED;
+  --amber:      #E8863D;
+  --line-dark:  rgba(238,242,246,0.14);
+  --line-light: rgba(13,18,30,0.12);
+
+  --font-display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --font-body: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-script: "Caveat", cursive;
+
+  --container: 1200px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --radius: 2px;
+  --ease: cubic-bezier(.22,.68,0,1);
+}
+
+*, *::before, *::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *, *::before, *::after{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
+
+body{
+  margin:0; background:var(--cloud); color:var(--ink);
+  font-family:var(--font-body); font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; margin:0; padding:0; }
+h1,h2,h3{ font-family:var(--font-display); font-weight:700; margin:0; letter-spacing:0.01em; text-transform:uppercase; }
+p{ margin:0; }
+
+.skip-link{ position:absolute; left:-999px; top:0; background:var(--amber); color:var(--ink); padding:.75rem 1.25rem; z-index:999; font-weight:700; }
+.skip-link:focus{ left:1rem; top:1rem; }
+:focus-visible{ outline:2px solid var(--signal); outline-offset:3px; }
+
+/* -------- shared -------- */
+.section-head{ max-width:640px; margin:0 auto 3.5rem; padding:0 var(--gutter); }
+.section-head h2{ font-size:clamp(2.1rem,3.8vw,3rem); margin-bottom:.75rem; line-height:1; }
+.section-head p{ color:#4a5568; font-size:1.05rem; font-family:var(--font-body); text-transform:none; }
+.section-head-light h2{ color:var(--cloud); }
+.section-head-light p{ color:var(--cloud-dim); opacity:.85; }
+
+.section-kicker{ font-family:var(--font-body); font-weight:700; font-size:.78rem; letter-spacing:.14em; text-transform:uppercase; color:var(--signal); margin-bottom:1rem; display:block; }
+.section-kicker-light{ color:var(--signal-soft); }
+
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.85rem 1.7rem; font-family:var(--font-body); font-weight:700; font-size:.9rem; letter-spacing:.03em; text-transform:uppercase; border-radius:var(--radius); border:1px solid transparent; cursor:pointer; transition:transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease); white-space:nowrap; }
+.btn-primary{ background:var(--amber); color:var(--ink); }
+.btn-primary:hover{ background:#f2a15f; transform:translateY(-2px); }
+.btn-ghost{ border-color:currentColor; color:var(--ink); background:transparent; }
+.btn-ghost:hover{ background:var(--ink); color:var(--cloud); transform:translateY(-2px); }
+.btn-ghost-light{ border-color:var(--line-dark); color:var(--cloud); background:transparent; }
+.btn-ghost-light:hover{ background:var(--cloud); color:var(--ink); transform:translateY(-2px); }
+.btn-lg{ padding:1.05rem 2.1rem; font-size:.95rem; }
+
+/* -------- horizon divider (structural motif) -------- */
+.horizon{ height:3px; width:100%; background:linear-gradient(90deg, var(--ink) 0%, var(--amber) 50%, var(--ink) 100%); opacity:.7; }
+.horizon-subtle{ height:1px; width:100%; background:linear-gradient(90deg, transparent, var(--line-light), transparent); }
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.site-header{ position:sticky; top:0; z-index:100; background:rgba(13,18,30,0.94); backdrop-filter:blur(6px); color:var(--cloud); }
+.header-inner{ max-width:var(--container); margin:0 auto; padding:.85rem var(--gutter); display:flex; align-items:center; gap:2rem; }
+.brand{ display:flex; align-items:center; margin-right:auto; }
+.brand img{ height:34px; width:auto; }
+
+.main-nav{ display:flex; gap:1.75rem; }
+.main-nav a{ font-size:.85rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; position:relative; padding:.25rem 0; }
+.main-nav a::after{ content:""; position:absolute; left:0; right:100%; bottom:0; height:1px; background:var(--amber); transition:right .25s var(--ease); }
+.main-nav a:hover::after{ right:0; }
+
+.header-actions{ display:flex; align-items:center; gap:1.25rem; }
+.header-phone{ font-size:.85rem; color:var(--cloud-dim); }
+.header-phone:hover{ color:var(--signal-soft); }
+
+.nav-toggle{ display:none; flex-direction:column; justify-content:center; gap:5px; width:2.2rem; height:2.2rem; background:none; border:none; cursor:pointer; }
+.nav-toggle span{ width:100%; height:2px; background:var(--cloud); }
+.mobile-nav{ display:none; flex-direction:column; gap:1rem; padding:0 var(--gutter) 1.5rem; }
+.mobile-nav.open{ display:flex; }
+.mobile-nav a{ font-size:.95rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; padding:.35rem 0; }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{ background:var(--ink); color:var(--cloud); overflow:hidden; position:relative; }
+.hero-grid{ max-width:var(--container); margin:0 auto; padding:clamp(2.5rem,6vw,5rem) var(--gutter); display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
+.hero-kicker{ font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:var(--signal-soft); margin-bottom:1.25rem; }
+.hero-title{ font-size:clamp(2.6rem,6vw,4.5rem); line-height:.98; margin-bottom:1.5rem; }
+.reveal-line{ display:block; overflow:hidden; }
+.reveal-line span{ display:block; transform:translateY(110%); opacity:0; animation:reveal .8s var(--ease) forwards; }
+.reveal-line:nth-child(1) span{ animation-delay:.05s; }
+.reveal-line:nth-child(2) span{ animation-delay:.18s; }
+.reveal-line:nth-child(3) span{ animation-delay:.31s; }
+@keyframes reveal{ to{ transform:translateY(0); opacity:1; } }
+.accent-text{ color:var(--amber); }
+
+.hero-sub{ font-family:var(--font-body); text-transform:none; font-size:1.12rem; color:var(--cloud-dim); max-width:46ch; margin-bottom:2.25rem; }
+.hero-ctas{ display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2.5rem; }
+.hero-trust{ display:flex; flex-wrap:wrap; gap:1.5rem 2.25rem; }
+.hero-trust li{ display:flex; align-items:center; gap:.5rem; font-size:.82rem; color:var(--cloud-dim); }
+.hero-trust li::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--signal); flex:none; }
+
+.hero-media{ position:relative; }
+.hero-media-inner{ position:relative; aspect-ratio:4/5; overflow:hidden; }
+.hero-media img{ width:100%; height:100%; object-fit:cover; filter:saturate(1.05); }
+
+.hud-tag{ position:absolute; font-family:var(--font-body); font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--signal-soft); background:rgba(13,18,30,0.72); border:1px solid var(--line-dark); padding:.45rem .7rem; }
+.hud-alt{ top:1rem; left:1rem; }
+.hud-coord{ bottom:1rem; right:1rem; text-align:right; }
+
+.altitude-rail{ position:absolute; top:0; bottom:0; left:-1.4rem; width:2px; background:var(--line-dark); display:none; }
+.altitude-marker{ position:absolute; left:50%; transform:translateX(-50%); width:8px; height:8px; border-radius:50%; background:var(--amber); animation:climb 2.6s var(--ease) forwards; }
+@keyframes climb{ from{ top:100%; } to{ top:8%; } }
+
+/* =========================================================
+   SERVICES (ascending-altitude list — a genuine flight concept)
+   ========================================================= */
+.services{ padding:clamp(4rem,8vw,7rem) 0; }
+.service-list{ max-width:var(--container); margin:0 auto; padding:0 var(--gutter); }
+.service-row{ display:grid; grid-template-columns:6rem 1fr auto; gap:1.5rem; align-items:center; padding:1.75rem 0; border-top:1px solid var(--line-light); }
+.service-list li:last-child{ border-bottom:1px solid var(--line-light); }
+.service-alt{ font-family:var(--font-display); font-size:1.05rem; color:var(--signal); letter-spacing:.02em; }
+.service-alt small{ display:block; font-family:var(--font-body); font-size:.65rem; color:var(--steel); text-transform:uppercase; letter-spacing:.1em; margin-top:.15rem; }
+.service-body h3{ font-size:1.5rem; margin-bottom:.35rem; }
+.service-body p{ font-family:var(--font-body); text-transform:none; color:#4a5568; max-width:56ch; }
+.service-tag{ font-size:.78rem; color:var(--ink); opacity:.55; white-space:nowrap; justify-self:end; text-transform:uppercase; letter-spacing:.05em; }
+
+/* =========================================================
+   WORK / AERIAL GALLERY
+   ========================================================= */
+.work{ background:var(--ink); color:var(--cloud); padding:clamp(4rem,8vw,7rem) 0; }
+.work .section-head{ margin-bottom:3rem; }
+.gallery{ max-width:var(--container); margin:0 auto; padding:0 var(--gutter); display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:220px; gap:.6rem; }
+.frame{ position:relative; margin:0; overflow:hidden; }
+.frame-wide{ grid-column:span 2; }
+.frame img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); filter:saturate(1.02) contrast(1.03); }
+.frame:hover img{ transform:scale(1.045); }
+.frame figcaption{ position:absolute; left:0; right:0; bottom:0; padding:.6rem .75rem; background:linear-gradient(to top, rgba(13,18,30,0.88), transparent); font-family:var(--font-body); font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; display:flex; justify-content:space-between; gap:.5rem; opacity:0; transform:translateY(6px); transition:opacity .3s var(--ease), transform .3s var(--ease); }
+.frame:hover figcaption{ opacity:1; transform:translateY(0); }
+.frame figcaption .alt{ color:var(--signal-soft); }
+.work-note{ max-width:var(--container); margin:1.5rem auto 0; padding:0 var(--gutter); font-size:.8rem; opacity:.55; text-transform:none; font-family:var(--font-body); }
+.work-cta{ max-width:var(--container); margin:2rem auto 0; padding:0 var(--gutter); }
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about{ max-width:var(--container); margin:0 auto; padding:clamp(4rem,8vw,7rem) var(--gutter); display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2rem,5vw,4.5rem); align-items:center; }
+.about-media img{ aspect-ratio:4/5; object-fit:cover; }
+.about-copy h2{ font-size:clamp(2rem,3.4vw,2.7rem); margin-bottom:1.25rem; }
+.about-copy p{ font-family:var(--font-body); text-transform:none; color:#4a5568; margin-bottom:1.1rem; max-width:58ch; }
+.about-sig{ display:flex; align-items:center; gap:1rem; margin:1.75rem 0; }
+.about-sig span.script{ font-family:var(--font-script); font-size:2rem; color:var(--ink); }
+.about-sig span.role{ font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; color:var(--steel); }
+.about-stats{ display:flex; gap:2rem; flex-wrap:wrap; margin-top:1.5rem; }
+.about-stats strong{ font-family:var(--font-display); display:block; font-size:1.7rem; color:var(--amber); }
+.about-stats span{ font-family:var(--font-body); text-transform:none; font-size:.85rem; color:#4a5568; max-width:17ch; display:block; }
+
+/* =========================================================
+   TESTIMONIALS
+   ========================================================= */
+.testimonials{ padding:clamp(4rem,8vw,7rem) 0; background:var(--cloud-dim); }
+.testimonial-feature{ max-width:760px; margin:0 auto 3rem; padding:0 var(--gutter); font-family:var(--font-display); text-transform:none; font-size:clamp(1.4rem,2.6vw,1.9rem); line-height:1.35; }
+.testimonial-feature cite{ display:block; font-family:var(--font-body); font-style:normal; text-transform:uppercase; letter-spacing:.05em; font-size:.8rem; margin-top:1.25rem; color:var(--signal); }
+.testimonial-grid{ max-width:var(--container); margin:0 auto; padding:0 var(--gutter); display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.testimonial-card{ padding:1.75rem; background:var(--cloud); border-top:3px solid var(--amber); }
+.testimonial-card p{ margin-bottom:1rem; color:#3a4250; font-family:var(--font-body); }
+.testimonial-card cite{ font-size:.78rem; font-style:normal; text-transform:uppercase; letter-spacing:.05em; opacity:.6; }
+.testimonial-note{ max-width:var(--container); margin:2rem auto 0; padding:0 var(--gutter); font-size:.8rem; opacity:.55; font-family:var(--font-body); }
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.contact{ background:var(--ink); color:var(--cloud); padding:clamp(4rem,8vw,7rem) 0; }
+.contact-grid{ max-width:var(--container); margin:0 auto; padding:0 var(--gutter); display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4.5rem); }
+.contact-info h2{ font-size:clamp(2rem,3.4vw,2.7rem); color:var(--cloud); margin-bottom:1.25rem; }
+.contact-lead{ font-family:var(--font-body); text-transform:none; color:var(--cloud-dim); max-width:46ch; margin-bottom:2rem; }
+.contact-details{ display:flex; flex-direction:column; gap:1.1rem; margin-bottom:2.25rem; }
+.contact-details li{ display:flex; flex-direction:column; gap:.15rem; }
+.contact-label{ font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--signal-soft); }
+.contact-details a, .contact-details span{ font-size:1.05rem; font-family:var(--font-body); }
+.contact-details a:hover{ color:var(--signal-soft); }
+
+.contact-form{ display:flex; flex-direction:column; gap:1rem; }
+.form-note{ font-family:var(--font-body); color:var(--cloud-dim); font-size:.9rem; margin-bottom:.5rem; }
+.contact-form label{ font-size:.78rem; text-transform:uppercase; letter-spacing:.06em; color:var(--cloud-dim); }
+.contact-form input, .contact-form select, .contact-form textarea{ width:100%; padding:.85rem 1rem; background:var(--ink-soft); border:1px solid var(--line-dark); color:var(--cloud); font-family:var(--font-body); font-size:1rem; border-radius:var(--radius); }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus{ outline:none; border-color:var(--signal); }
+.contact-form button{ margin-top:.5rem; align-self:flex-start; }
+.form-status{ font-family:var(--font-body); font-size:.9rem; color:var(--signal-soft); min-height:1.2em; }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer{ background:var(--ink); color:var(--cloud-dim); }
+.footer-inner{ max-width:var(--container); margin:0 auto; padding:3rem var(--gutter) 2rem; display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:2rem; }
+.footer-brand img{ height:30px; width:auto; margin-bottom:.75rem; }
+.footer-brand p{ font-family:var(--font-body); font-size:.85rem; opacity:.7; max-width:28ch; }
+.footer-nav, .footer-contact{ display:flex; flex-direction:column; gap:.75rem; font-size:.88rem; font-family:var(--font-body); }
+.footer-nav a{ text-transform:uppercase; letter-spacing:.04em; font-weight:600; font-size:.8rem; }
+.footer-nav a:hover, .footer-contact a:hover{ color:var(--signal-soft); }
+.footer-bottom{ border-top:1px solid var(--line-dark); padding:1.25rem var(--gutter); text-align:center; font-size:.78rem; font-family:var(--font-body); opacity:.55; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width:980px){
+  .main-nav, .header-actions{ display:none; }
+  .nav-toggle{ display:flex; }
+  .hero-grid{ grid-template-columns:1fr; }
+  .hero-media{ order:-1; max-width:420px; }
+  .about{ grid-template-columns:1fr; }
+  .about-media{ max-width:420px; }
+  .gallery{ grid-template-columns:repeat(2,1fr); grid-auto-rows:200px; }
+  .frame-wide{ grid-column:span 2; }
+  .testimonial-grid{ grid-template-columns:1fr; }
+  .contact-grid{ grid-template-columns:1fr; }
+  .footer-inner{ grid-template-columns:1fr; gap:1.75rem; }
+}
+@media (max-width:640px){
+  .service-row{ grid-template-columns:4rem 1fr; }
+  .service-tag{ grid-column:2; justify-self:start; opacity:.5; }
+  .gallery{ grid-template-columns:repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <img src="data:image/png;base64,__LOGO_CLOUD__" alt="Infinit Shots">
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-phone" href="tel:+27794635934">079 463 5934</a>
+      <a class="btn btn-primary" href="#contact">Get a quote</a>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Contact</a>
+    <a class="header-phone" href="tel:+27794635934">079 463 5934</a>
+    <a class="btn btn-primary" href="#contact">Get a quote</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-kicker">Johannesburg, Gauteng · Aerial photography &amp; video</p>
+        <h1 class="hero-title">
+          <span class="reveal-line"><span>Some shots</span></span>
+          <span class="reveal-line"><span>only work from</span></span>
+          <span class="reveal-line"><span class="accent-text">120 metres up.</span></span>
+        </h1>
+        <p class="hero-sub">Infinit Shots is a boutique drone studio based in Johannesburg — aerial photography and video for property, events, land and anything better seen from above.</p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="#contact">Get a quote</a>
+          <a class="btn btn-ghost btn-lg" href="#work">See the footage</a>
+        </div>
+
+        <ul class="hero-trust">
+          <li>Boutique studio, direct to Tshepo</li>
+          <li>Careful, compliant flights</li>
+          <li>Based in Johannesburg</li>
+        </ul>
+      </div>
+
+      <div class="hero-media">
+        <div class="hero-media-inner">
+          <img src="images/thatched-estate.jpg"
+               alt="Aerial view of a thatched-roof Johannesburg estate with pool and mature gardens"
+               width="826" height="541" loading="eager" fetchpriority="high">
+          <span class="hud-tag hud-alt">Alt 120m</span>
+          <span class="hud-tag hud-coord">-26.2041°S<br>28.0473°E</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="horizon" aria-hidden="true"></div>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="services" id="services">
+    <div class="section-head">
+      <p class="section-kicker">What we fly</p>
+      <h2>Higher for a reason</h2>
+      <p>Every service climbs to the height that actually suits the shot — not just a fixed package.</p>
+    </div>
+
+    <ul class="service-list">
+      <li class="service-row">
+        <span class="service-alt">40M<small>Low pass</small></span>
+        <div class="service-body">
+          <h3>Aerial Photography</h3>
+          <p>Property, land, portraits and landscapes shot from above — clean stills, properly composed.</p>
+        </div>
+        <span class="service-tag">Stills, edited</span>
+      </li>
+      <li class="service-row">
+        <span class="service-alt">80M<small>Cruise</small></span>
+        <div class="service-body">
+          <h3>Aerial Videography</h3>
+          <p>Cinematic flyovers, reveals and promo footage — shot and edited into something you can actually use.</p>
+        </div>
+        <span class="service-tag">4K, edited</span>
+      </li>
+      <li class="service-row">
+        <span class="service-alt">100M<small>Survey</small></span>
+        <div class="service-body">
+          <h3>Real Estate &amp; Property</h3>
+          <p>Full flyover packages for agents and homeowners — the shots that make a listing stand out.</p>
+        </div>
+        <span class="service-tag">For agents &amp; owners</span>
+      </li>
+      <li class="service-row">
+        <span class="service-alt">120M<small>Overview</small></span>
+        <div class="service-body">
+          <h3>Events &amp; Venues</h3>
+          <p>Weddings, festivals, sports days and functions — the wide shot that ground cameras miss.</p>
+        </div>
+        <span class="service-tag">Photo + video</span>
+      </li>
+      <li class="service-row">
+        <span class="service-alt">150M<small>Wide</small></span>
+        <div class="service-body">
+          <h3>Construction &amp; Land Progress</h3>
+          <p>Scheduled flyovers to track a build or site over time — the same angle, shot again and again.</p>
+        </div>
+        <span class="service-tag">Recurring bookings</span>
+      </li>
+      <li class="service-row">
+        <span class="service-alt">—<small>Custom</small></span>
+        <div class="service-body">
+          <h3>Something else airborne</h3>
+          <p>Inspections, mapping, content days — if it needs a drone, ask and we'll work out the flight.</p>
+        </div>
+        <span class="service-tag">Just ask</span>
+      </li>
+    </ul>
+  </section>
+
+  <div class="horizon-subtle" aria-hidden="true"></div>
+
+  <!-- ============ WORK / AERIAL GALLERY ============ -->
+  <section class="work" id="work">
+    <div class="section-head section-head-light">
+      <p class="section-kicker section-kicker-light">Recent flights</p>
+      <h2>A few frames from above</h2>
+      <p>Stills pulled from recent flights. Full galleries and video reels are shared after every booking.</p>
+    </div>
+
+    <div class="gallery">
+      <figure class="frame frame-wide">
+        <img src="images/jacaranda-city.jpg" alt="Aerial view of Johannesburg's CBD in full jacaranda bloom" loading="lazy" width="846" height="524">
+        <figcaption><span>Jacaranda season</span><span class="alt">120m</span></figcaption>
+      </figure>
+      <figure class="frame">
+        <img src="images/modern-house.jpg" alt="Aerial view of a modern double-storey home with pool and red roof detailing" loading="lazy" width="825" height="606">
+        <figcaption><span>Property flyover</span><span class="alt">70m</span></figcaption>
+      </figure>
+      <figure class="frame">
+        <img src="images/thatched-estate.jpg" alt="Aerial view of a thatched-roof estate with pool and landscaped garden" loading="lazy" width="826" height="541">
+        <figcaption><span>Estate survey</span><span class="alt">60m</span></figcaption>
+      </figure>
+      <figure class="frame">
+        <img src="images/towers-golden-hour.jpg" alt="Four aerial views of high-rise towers at golden hour" loading="lazy" width="340" height="392">
+        <figcaption><span>Golden hour towers</span><span class="alt">300m</span></figcaption>
+      </figure>
+      <figure class="frame frame-wide">
+        <img src="images/crew-jacaranda.jpg" alt="The Infinit Shots crew posing together under a jacaranda-lined street" loading="lazy" width="756" height="502">
+        <figcaption><span>Behind the lens</span><span class="alt">Ground crew</span></figcaption>
+      </figure>
+    </div>
+
+    <p class="work-note">A few real frames from recent flights around Johannesburg — full galleries and reels are shared after every booking.</p>
+
+    <div class="work-cta">
+      <a class="btn btn-ghost-light" href="#contact">Book your own flight</a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="about-media">
+      <img src="images/modern-house.jpg" alt="Aerial view of a modern home with pool, shot by Infinit Shots" loading="lazy" width="825" height="606">
+    </div>
+    <div class="about-copy">
+      <p class="section-kicker">About the studio</p>
+      <h2>A boutique studio, on purpose.</h2>
+      <p>Infinit Shots is run by Tshepo, based in Johannesburg. Boutique isn't a marketing word here — it means a small number of bookings, handled personally, rather than a big team pushing volume.</p>
+      <p>Every flight is planned before it happens: the shot list, the light, the airspace. That's what separates footage that looks intentional from footage that just happens to be high up.</p>
+      <div class="about-sig">
+        <span class="script">Tshepo</span>
+        <span class="role">Founder &amp; pilot,<br>Infinit Shots</span>
+      </div>
+      <div class="about-stats">
+        <div><strong>1:1</strong><span>direct contact with your pilot</span></div>
+        <div><strong>JHB</strong><span>based, flying across Gauteng</span></div>
+        <div><strong>Booked</strong><span>ahead — flights are planned, not rushed</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="horizon-subtle" aria-hidden="true"></div>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-head">
+      <p class="section-kicker">What clients say</p>
+      <h2>Feedback we work to earn</h2>
+      <p>A sample of the kind of feedback we aim for on every booking.</p>
+    </div>
+
+    <div class="testimonial-feature">
+      "Needed property flyovers for three listings in one week — Tshepo planned each flight around the light and had edited footage back to me faster than I expected."
+      <cite>— Estate agent, property flyover client</cite>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"The venue reveal shot from the drone made our wedding video — guests still talk about it."</p>
+        <cite>— Wedding client</cite>
+      </div>
+      <div class="testimonial-card">
+        <p>"We book a flyover of our site every month to track progress. Same angle every time, which makes comparing easy."</p>
+        <cite>— Construction site manager</cite>
+      </div>
+      <div class="testimonial-card">
+        <p>"Quick to respond, clear about what was and wasn't possible given the weather, and the footage was worth the wait."</p>
+        <cite>— Events client</cite>
+      </div>
+    </div>
+    <p class="testimonial-note">Sample quotes shown for illustration — swap these for your real client reviews before launch.</p>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-kicker section-kicker-light">Let's plan a flight</p>
+        <h2>Tell us the shot you need.</h2>
+        <p class="contact-lead">Send the details — location, date, what you're shooting for — and you'll hear back directly from Tshepo, not a call centre.</p>
+
+        <ul class="contact-details">
+          <li>
+            <span class="contact-label">Phone</span>
+            <a href="tel:+27794635934">+27 79 463 5934</a>
+          </li>
+          <li>
+            <span class="contact-label">Email</span>
+            <a href="mailto:tshepo@infinitshots.co.za">tshepo@infinitshots.co.za</a>
+          </li>
+          <li>
+            <span class="contact-label">Based in</span>
+            <span>Johannesburg, 2000, Gauteng</span>
+          </li>
+          <li>
+            <span class="contact-label">Website</span>
+            <a href="https://infinitshots.co.za" target="_blank" rel="noopener">infinitshots.co.za</a>
+          </li>
+        </ul>
+
+        <a class="btn btn-primary btn-lg" href="mailto:tshepo@infinitshots.co.za">Email Tshepo directly</a>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <p class="form-note">Fill this in and it'll open a message addressed to us, ready to send.</p>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+
+        <label for="service">What do you need?</label>
+        <select id="service" name="service">
+          <option>Aerial Photography</option>
+          <option>Aerial Videography</option>
+          <option>Real Estate / Property</option>
+          <option>Events / Venue coverage</option>
+          <option>Construction / Land progress</option>
+          <option>Something else</option>
+        </select>
+
+        <label for="message">Location, date and a few details</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn btn-primary btn-lg">Send message</button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="data:image/png;base64,__LOGO_CLOUD__" alt="Infinit Shots">
+      <p>Boutique aerial photography &amp; videography, based in Johannesburg.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="footer-contact">
+      <a href="tel:+27794635934">+27 79 463 5934</a>
+      <a href="mailto:tshepo@infinitshots.co.za">tshepo@infinitshots.co.za</a>
+      <a href="https://infinitshots.co.za" target="_blank" rel="noopener">infinitshots.co.za</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Infinit Shots. Johannesburg, Gauteng.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var toggle = document.getElementById("navToggle");
+  var mobileNav = document.getElementById("mobileNav");
+  if (toggle && mobileNav) {
+    toggle.addEventListener("click", function () {
+      var isOpen = mobileNav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    });
+    mobileNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mobileNav.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+      });
+    });
+  }
+
+  var yearEl = document.getElementById("year");
+  if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
+
+  var form = document.getElementById("contactForm");
+  var status = document.getElementById("formStatus");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = form.name.value.trim();
+      var email = form.email.value.trim();
+      var service = form.service.value;
+      var message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        status.textContent = "Please fill in your name, email and a short message.";
+        return;
+      }
+
+      var subject = encodeURIComponent("Flight enquiry: " + service);
+      var body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Service: " + service + "\n\n" +
+        message
+      );
+
+      window.location.href = "mailto:tshepo@infinitshots.co.za?subject=" + subject + "&body=" + body;
+      status.textContent = "Opening your email app — send the message to reach us.";
+    });
+  }
+
+  var frames = document.querySelectorAll(".frame");
+  if ("IntersectionObserver" in window && frames.length) {
+    frames.forEach(function (f) { f.style.opacity = "0"; f.style.transform = "translateY(14px)"; f.style.transition = "opacity .5s ease, transform .5s ease"; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    frames.forEach(function (f) { io.observe(f); });
+  }
+})();
+</script>
+</body>
+</html>
